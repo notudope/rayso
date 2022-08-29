@@ -1,0 +1,44 @@
+{
+    "name": "raysoniz",
+    "version": "0.0.1",
+    "description": "ray.so REST API.",
+    "private": true,
+    "main": "api/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node api/index.js",
+        "dev": "nodemon api/index.js",
+        "format": "prettier --check \"./**/*.{js,json,yml,html,css}\" --write"
+    },
+    "prettier": {
+        "printWidth": 120,
+        "tabWidth": 4,
+        "singleQuote": false,
+        "bracketSpacing": false,
+        "bracketSameLine": true,
+        "arrowParens": "always",
+        "trailingComma": "all",
+        "semi": true,
+        "proseWrap": "always"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/notudope/raysoniz.git"
+    },
+    "author": "notudope",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/notudope/raysoniz/issues"
+    },
+    "homepage": "https://github.com/notudope/raysoniz#readme",
+    "dependencies": {
+        "express": "^4.18.1",
+        "puppeteer": "^14.4.1",
+        "puppeteer-core": "^14.4.1",
+        "raysoniz-api": "github:akashrchandran/rayso"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.15",
+        "prettier": "^2.6.0"
+    }
+}
