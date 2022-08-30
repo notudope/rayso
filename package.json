@@ -33,9 +33,9 @@
     "homepage": "https://github.com/notudope/raysoniz#readme",
     "dependencies": {
         "express": "^4.18.1",
-        "puppeteer": "^14.4.1",
-        "puppeteer-core": "^14.4.1",
-        "rayso-api": "github:akashrchandran/rayso"
+        "chrome-aws-lambda": "^8.0.2",
+        "puppeteer-core": "^8.0.0",
+        "rayso-api": "^1.0.10"
     },
     "devDependencies": {
         "nodemon": "^2.0.15",

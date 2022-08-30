@@ -1,10 +1,11 @@
 const express = require("express");
+const chrome = require("chrome-aws-lambda");
 const RaySo = require("rayso-api");
 const app = express();
 
 app.use(express.json());
 
-app.get("/api", (req, res) => {
+app.get("/api", async (req, res) => {
     if (!req.query.code) {
         res.status(400);
         res.json({error: "code query parameter is missing."});
@@ -17,6 +18,7 @@ app.get("/api", (req, res) => {
         language: req.query.language,
         background: req.query.background,
         darkMode: req.query.darkMode,
+        browserPath: process.env.NODE_ENV !== "development" ? await chrome.executablePath : "/bin/chromium",
     });
     raySo
         .cook(`${req.query.code}`)
@@ -28,7 +30,7 @@ app.get("/api", (req, res) => {
         });
 });
 
-app.post("/api", (req, res) => {
+app.post("/api", async (req, res) => {
     if (!req.body.code) {
         res.status(400);
         res.json({error: "Body cannot be empty or missing code parameter."});
@@ -41,6 +43,7 @@ app.post("/api", (req, res) => {
         language: req.body.language,
         background: req.body.background,
         darkMode: req.body.darkMode,
+        browserPath: process.env.NODE_ENV !== "development" ? await chrome.executablePath : "/bin/chromium",
     });
     raySo
         .cook(`${req.body.code}`)
