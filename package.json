@@ -5,7 +5,7 @@
     "private": true,
     "main": "api/index.js",
     "engines": {
-        "node": ">=12"
+        "node": "^14"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -36,7 +36,7 @@
     "homepage": "https://github.com/notudope/raysoniz#readme",
     "dependencies": {
         "express": "^4.18.1",
-        "chrome-aws-lambda": "8.0.2",
+        "chrome-aws-lambda": ">=6.0.0",
         "rayso-api": "^1.0.10"
     },
     "devDependencies": {
